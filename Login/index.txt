@@ -1,0 +1,15 @@
+1.创建数据库
+CREATE TABLE `user` (
+  `userid` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(30) NOT NULL,
+  `password` varchar(30) NOT NULL,
+  PRIMARY KEY (`userid`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+INSERT INTO `example`.`user` (`userid`, `name`, `password`) VALUES ('1', 'lin', '1234');
+2.Dao中新建一个接口IUserDA里面包含findLogin函数，用来从数据库中找到登陆的用户名和密码
+3.Dao中新建一个接口UserDAOImpI.java里面实现接口中findLogin函数，做查询数据库，连接数据库的操作
+4.Dao.proxy新建UserDAOProxy.java用户登陆验证
+5.Dbc新建DatabaseConnection.java连接数据库操作
+6.Servlet新建LoginServlet.java将jsp文件输入的数据处理，不过现在最好是在jsp上面验证数据，前端验证数据
+7.Vo新建User.java中user类存储数据以及get和set方法
+8.
